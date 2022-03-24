@@ -38,4 +38,12 @@ describe ('Tennis kata score', ()=>{
         tennis.playerTwo++;
         expect(tennis.score()).toBe('love thirty');
     });
+
+    test('returns love forty', ()=>{
+        const tennis = new Tennis();
+        tennis.playerTwo++;
+        tennis.playerTwo++;
+        tennis.playerTwo++;
+        expect(tennis.score()).toBe('love forty');
+    });
 })
