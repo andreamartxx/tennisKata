@@ -6,6 +6,9 @@ class Tennis{
         if(this.playerOne == 1){
             return 'fifteen love';
         }
+        if(this.playerOne == 2){
+            return 'thirty love';
+        }
         return 'love all';
     }
 
