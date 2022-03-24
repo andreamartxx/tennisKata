@@ -13,14 +13,8 @@ class Tennis{
         if(this.playerOne >0){
             return `${this.scoreTable[this.playerOne]} love`;
         }
-        if(this.playerTwo == 1){
-            return 'love fifteen';
-        }
-        if(this.playerTwo == 2){
-            return 'love thirty';
-        }
-        if(this.playerTwo == 3){
-            return 'love forty';
+        if(this.playerTwo > 0){
+            return `love ${this.scoreTable[this.playerTwo]}`;
         }
         return 'love all';
     }
