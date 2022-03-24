@@ -47,4 +47,18 @@ describe ('Tennis kata score', ()=>{
         tennis.playerTwoTurns(1);
         expect(tennis.score()).toBe('fifteen all');
     });
+
+    test('returns thirty all', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(2);
+        tennis.playerTwoTurns(2);
+        expect(tennis.score()).toBe('thirty all');
+    });
+
+    test('returns deuce', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(3);
+        tennis.playerTwoTurns(3);
+        expect(tennis.score()).toBe('deuce');
+    });
 })
