@@ -14,6 +14,9 @@ class Tennis{
         if(this.playerOne != this.playerTwo){
             return `${this.scoreTable[this.playerOne]} ${this.scoreTable[this.playerTwo]}`;
         }
+        if(this.playerOne >= 3){
+            return 'deuce';
+        }
         return `${this.scoreTable[this.playerOne]} all`;
     }
 
