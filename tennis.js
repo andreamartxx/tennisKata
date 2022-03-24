@@ -19,6 +19,9 @@ class Tennis{
         if(this.playerTwo == 2){
             return 'love thirty';
         }
+        if(this.playerTwo == 3){
+            return 'love forty';
+        }
         return 'love all';
     }
 
