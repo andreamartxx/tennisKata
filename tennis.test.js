@@ -75,4 +75,11 @@ describe ('Tennis kata score', ()=>{
         tennis.playerTwoTurns(4);
         expect(tennis.score()).toBe('playerTwo adv');
     });
+
+    test('returns playerOne win', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(5);
+        tennis.playerTwoTurns(3);
+        expect(tennis.score()).toBe('playerOne win');
+    });
 })
