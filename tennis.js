@@ -19,6 +19,20 @@ class Tennis{
         return 'love all';
     }
 
+    playerOneTurns(time){
+        for (let i = 0; i < time; i++) {
+            this.playerOne++;
+            
+        }
+    }
+
+    playerTwoTurns(time){
+        for (let i = 0; i < time; i++) {
+            this.playerTwo++;
+            
+        }
+    }
+
 }
 
 module.exports = Tennis;
