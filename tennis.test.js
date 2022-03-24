@@ -10,4 +10,11 @@ describe ('Tennis kata score', ()=>{
         tennis.playerOne++;
         expect(tennis.score()).toBe('fifteen love');
     });
+
+    test('returns thirty love', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOne++;
+        tennis.playerOne++;
+        expect(tennis.score()).toBe('thirty love');
+    });
 })
