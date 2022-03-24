@@ -12,6 +12,9 @@ class Tennis{
 
     score(){
         if(this.playerOne != this.playerTwo){
+            if(this.playerOne > 3){
+                return 'playerOne adv';
+            }
             return `${this.scoreTable[this.playerOne]} ${this.scoreTable[this.playerTwo]}`;
         }
         if(this.playerOne >= 3){
