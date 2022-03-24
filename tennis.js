@@ -13,10 +13,11 @@ class Tennis{
     score(){
         if(this.playerOne != this.playerTwo){
             if(this.playerOne > 3 || this.playerTwo > 3){
+                const advName = this.playerOne > this.playerTwo ? "playerOne" : "playerTwo";
                if(Math.abs(this.playerOne - this.playerTwo) == 1){
-                   const advName = this.playerOne > this.playerTwo ? "playerOne" : "playerTwo";
                    return `${advName} adv`; 
                }
+               return `${advName} win`;
             }
             return `${this.scoreTable[this.playerOne]} ${this.scoreTable[this.playerTwo]}`;
         }
