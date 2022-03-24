@@ -4,19 +4,17 @@ class Tennis{
     playerTwo = 0;
 
     scoreTable = {
+        0: 'love',
         1: 'fifteen',
         2: 'thirty',
         3: 'forty'
     }
 
     score(){
-        if(this.playerOne >0){
-            return `${this.scoreTable[this.playerOne]} love`;
+        if(this.playerOne != this.playerTwo){
+            return `${this.scoreTable[this.playerOne]} ${this.scoreTable[this.playerTwo]}`;
         }
-        if(this.playerTwo > 0){
-            return `love ${this.scoreTable[this.playerTwo]}`;
-        }
-        return 'love all';
+        return `${this.scoreTable[this.playerOne]} all`;
     }
 
     playerOneTurns(time){
