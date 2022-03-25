@@ -23,6 +23,20 @@ describe ('Tennis kata score', ()=>{
         expect(tennis.score()).toBe('forty love');
     });
 
+    test('returns playerOne adv', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(4);
+        tennis.playerTwoTurns(3);
+        expect(tennis.score()).toBe('playerOne adv');
+    });
+
+    test('returns playerOne win', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(5);
+        tennis.playerTwoTurns(3);
+        expect(tennis.score()).toBe('playerOne win');
+    });
+
     test('returns love fifteen', ()=>{
         const tennis = new Tennis();
         tennis.playerTwoTurns(1);
@@ -39,6 +53,20 @@ describe ('Tennis kata score', ()=>{
         const tennis = new Tennis();
         tennis.playerTwoTurns(3);
         expect(tennis.score()).toBe('love forty');
+    });
+
+    test('returns playerTwo adv', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(3);
+        tennis.playerTwoTurns(4);
+        expect(tennis.score()).toBe('playerTwo adv');
+    });
+
+    test('returns playerOne win', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(3);
+        tennis.playerTwoTurns(5);
+        expect(tennis.score()).toBe('playerTwo win');
     });
 
     test('returns fifteen all', ()=>{
@@ -60,26 +88,5 @@ describe ('Tennis kata score', ()=>{
         tennis.playerOneTurns(3);
         tennis.playerTwoTurns(3);
         expect(tennis.score()).toBe('deuce');
-    });
-
-    test('returns playerOne adv', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(4);
-        tennis.playerTwoTurns(3);
-        expect(tennis.score()).toBe('playerOne adv');
-    });
-
-    test('returns playerTwo adv', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(3);
-        tennis.playerTwoTurns(4);
-        expect(tennis.score()).toBe('playerTwo adv');
-    });
-
-    test('returns playerOne win', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(5);
-        tennis.playerTwoTurns(3);
-        expect(tennis.score()).toBe('playerOne win');
     });
 })
