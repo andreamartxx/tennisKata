@@ -47,7 +47,7 @@ module.exports = class Tennis{
     }
 
     playerOneTurns(time){
-        if(this.playerOne == 4){
+        if(this.playerOne == 4 || this.playerTwo == 4){
             throw new Error("Game over");
         }
     
@@ -57,7 +57,7 @@ module.exports = class Tennis{
     }
 
     playerTwoTurns(time){
-        if(this.playerOne == 4){
+        if(this.playerOne == 4 || this.playerTwo == 4){
             throw new Error("Game over");
         }
         for (let i = 0; i < time; i++) {
