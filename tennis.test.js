@@ -1,4 +1,4 @@
-const Tennis = require ('./tennis');
+const Tennis = require('./tennis');
 
 describe ('Tennis kata score', ()=>{
     test('returns love all', ()=>{
@@ -23,19 +23,24 @@ describe ('Tennis kata score', ()=>{
         expect(tennis.score()).toBe('forty love');
     });
 
-    test('returns playerOne adv', ()=>{
+    test('playerOne wins after 4 points in a row', ()=>{
         const tennis = new Tennis();
         tennis.playerOneTurns(4);
-        tennis.playerTwoTurns(3);
-        expect(tennis.score()).toBe('playerOne adv');
-    });
-
-    test('returns playerOne win', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(5);
-        tennis.playerTwoTurns(3);
         expect(tennis.score()).toBe('playerOne win');
     });
+
+    test('the players cannot score points after someone already won', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(4);
+        expect(() =>{
+            tennis.playerOneTurns(1)
+        }).toThrow("Game over");
+        expect(() =>{
+            tennis.playerTwoTurns(1)
+        } ).toThrow("Game over");
+    });
+
+
 
     test('returns love fifteen', ()=>{
         const tennis = new Tennis();
@@ -62,12 +67,13 @@ describe ('Tennis kata score', ()=>{
         expect(tennis.score()).toBe('playerTwo adv');
     });
 
-    test('returns playerOne win', ()=>{
+    test('playerTwo wins after 4 points in a row', ()=>{
         const tennis = new Tennis();
-        tennis.playerOneTurns(3);
-        tennis.playerTwoTurns(5);
+        tennis.playerTwoTurns(4);
         expect(tennis.score()).toBe('playerTwo win');
     });
+
+
 
     test('returns fifteen all', ()=>{
         const tennis = new Tennis();
