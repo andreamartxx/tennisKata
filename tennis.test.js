@@ -73,7 +73,12 @@ describe ('Tennis kata score', ()=>{
         expect(tennis.score()).toBe('playerTwo win');
     });
 
-
+    test('the players cannot score points after someone already won', ()=>{
+        const tennis = new Tennis();
+        tennis.playerTwoTurns(4);
+        expect(() => tennis.playerOneTurns(1)).toThrow("Game over");
+        expect(() => tennis.playerTwoTurns(1)).toThrow("Game over");
+    });
 
     test('returns fifteen all', ()=>{
         const tennis = new Tennis();
