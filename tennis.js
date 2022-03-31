@@ -39,7 +39,7 @@ module.exports = class Tennis{
     }
 
     deuce() {
-        return this.playerOne >= 3;
+        return this.playerOne >= 3 && this.playerOne == this.playerTwo;
     }
 
     differencePlayers() {
@@ -47,7 +47,7 @@ module.exports = class Tennis{
     }
 
     playerOneTurns(time){
-        if(this.playerOne == 4 || this.playerTwo == 4){
+        if((this.playerOne == 4 || this.playerTwo == 4) && this.playerOne != 3){
             throw new Error("Game over");
         }
     
