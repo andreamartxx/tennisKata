@@ -1,5 +1,4 @@
-
-function printTennis(){
+    function printTennis(){
     
     const Tennis = require('./tennis');
 
@@ -7,8 +6,7 @@ function printTennis(){
 
     const prompt = require("prompt-sync")();
 
-    
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 15; i++) {
         
         players = prompt('Which player scores? ');
 
@@ -20,7 +18,6 @@ function printTennis(){
             console.log(tennis.score());
         }
     }
-    
 }
 
 printTennis();

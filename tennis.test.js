@@ -32,15 +32,9 @@ describe ('Tennis kata score', ()=>{
     test('the players cannot score points after someone already won', ()=>{
         const tennis = new Tennis();
         tennis.playerOneTurns(4);
-        expect(() =>{
-            tennis.playerOneTurns(1)
-        }).toThrow("Game over");
-        expect(() =>{
-            tennis.playerTwoTurns(1)
-        } ).toThrow("Game over");
+        expect(() =>{tennis.playerOneTurns(1)}).toThrow("Game over");
+        expect(() =>{tennis.playerTwoTurns(1)}).toThrow("Game over");
     });
-
-
 
     test('returns love fifteen', ()=>{
         const tennis = new Tennis();
@@ -59,21 +53,6 @@ describe ('Tennis kata score', ()=>{
         tennis.playerTwoTurns(3);
         expect(tennis.score()).toBe('love forty');
     });
-
-    test('returns playerTwo adv', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(3);
-        tennis.playerTwoTurns(4);
-        expect(tennis.score()).toBe('playerTwo adv');
-    });
-
-    test('playerOne scores again', ()=>{
-        const tennis = new Tennis();
-        tennis.playerOneTurns(3);
-        tennis.playerTwoTurns(4);
-        tennis.playerOneTurns(1);
-        expect(tennis.score()).toBe('deuce');
-    })
 
     test('playerTwo wins after 4 points in a row', ()=>{
         const tennis = new Tennis();
@@ -95,11 +74,40 @@ describe ('Tennis kata score', ()=>{
         expect(tennis.score()).toBe('fifteen all');
     });
 
+    test('returns fifteen thirty', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(1);
+        tennis.playerTwoTurns(2);
+        expect(tennis.score()).toBe('fifteen thirty');
+    });
+
     test('returns thirty all', ()=>{
         const tennis = new Tennis();
         tennis.playerOneTurns(2);
         tennis.playerTwoTurns(2);
         expect(tennis.score()).toBe('thirty all');
+    });
+
+    test('returns thirty forty', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(2);
+        tennis.playerTwoTurns(3);
+        expect(tennis.score()).toBe('thirty forty');
+    });
+
+    test('returns playerTwo adv', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(3);
+        tennis.playerTwoTurns(4);
+        expect(tennis.score()).toBe('playerTwo adv');
+    });
+
+    test('playerOne scores again', ()=>{
+        const tennis = new Tennis();
+        tennis.playerOneTurns(2);
+        tennis.playerTwoTurns(3);
+        tennis.playerOneTurns(1);
+        expect(tennis.score()).toBe('deuce');
     });
 
     test('returns deuce', ()=>{
